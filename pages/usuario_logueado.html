@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuario Logueado</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navegacion">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbox">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </label>
+            <a class="anclaLogo" href="../index.html">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>CAC-Movies</span>
+            </a>
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="../index.html#tendecias">Tendencias</a></li>
+                <li class="listaItem"><a class="linkNav" href="../pages/agregarPelis.html">Agregar Películas</a></li>              
+                <!-- <li class="listaItem"><a class="linkNav iniciarSesion" href="./pages/iniciosesion.html">Iniciar Sesión</a></li> -->
+            </ul>
+        </nav>
+        <section class="menu-hamburguesa">
+            <a class="linkNav" href="../index.html#tendencias">Tendencias</a>
+            <a class="linkNav" href="./pages/api.html">Agregar Peliculas</a>
+            <li class="listaItem"><a class="linkNav" href="./pages/">Peliculas</a></li>
+        </section>
+    </header>
+    <main class="contenedor-principal">
+        <div class="titulo">
+            <h1 id="welcome"></h1>
+        </div>
+        <div class="listaPelis">
+            <h3 id="favoritas">Listado de Peliculas favoritas</h3>
+            <!-- <p class="small">Para ver todos los datos de las peliculas, elija una y toque modificar</p> -->
+            <table class="table table-dark table-striped" id="tablePeliculas">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Genero</th>
+                        <th>Duracion</th>
+                        <th>Clasificacion</th>
+                        <th>Valoracion</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTablePeliculas">
+                  
+                </tbody>
+            </table>
+        </div>           
+    </main>
+    <footer class="footer">
+        <nav class="navegacion">
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="">Términos y condiciones</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Preguntas frecuentes</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Ayuda</a></li>
+                <li class="listaItem"><a class="linkNav administradorPeliculas" href="">Administrador Peliculas</a></li>
+            </ul>
+        </nav>
+        <a href="#header" class="flechaArriba">
+            <img src="../assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
+        </a>
+        <p class="aportes">Aporte realizado por coordinación JAVA-PHP Colaborador <a href="https://www.linkedin.com/in/gisele-milagros-gonzalez" target="_blank">Gisele M. Gonzalez</a></p>
+        <p class="video">Proyecto paso a paso <a href="https://youtu.be/1PgXE1c5jOM" target="_blank">Video Youtube</a></p>
+    </footer>
+    <script type="text/javascript">
+        let urlParams = new URLSearchParams(window.location.search)
+        let email = urlParams.get('email')
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if (email) {
+                document.getElementById('welcome').textContent = 'Bienvenido ' + email
+                document.getElementById('favoritas').textContent = 'A continuación podrá ver sus peliculas favoritas:'
+            }
+            else {
+                document.getElementById('welcome').textContent = 'Usuario no registrado!'
+                document.getElementById('favoritas').textContent = 'Registrese para agregar peliculas favoritas'
+                document.getElementById('tablePeliculas').style.display = "none"
+                document.getElementById('.linkNav').style.display = "none"
+            }
+        } )
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../js/components/navbar/menuHamburguesa.js"></script>
+    <script src="../js/postPelicula.js"></script>
+    <script src="../js/getPeliculas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

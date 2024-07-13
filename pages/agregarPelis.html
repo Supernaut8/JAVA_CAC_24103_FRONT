@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrega Peliculas | CAC-MOVIES</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body class="bodyNuevaPelicula">
+    <header class="headerNuevaPelicula">
+        <a class="anclaLogo" href="../index.html">
+            <i class="fas fa-film" aria-hidden="true"></i>
+            <span>CAC-Movies</span>
+        </a>
+    </header>
+    <main id="main" class="main">
+        <section data-aos="zoom-in" data-aos-duration="1000" class="seccionAgregarPelis">
+            <form action="" method="post" id="formNuevaPelicula" enctype="multipart/form-data">
+                <h2 class="tituloNuevaPelicula">Nueva Pelicula</h2>
+                <div class="col-12 col-md-6">
+                    <label for="nombre">Nombre</label>
+                    <input class="form-control" type="text" name="nombre" id="nombre">
+                </div>
+                <div class="col-6 col-md-4">
+                    <label for="genero">Genero</label>
+                    <input class="form-control" type="text" name="genero" id="genero">
+                </div>
+                <div class="col-6 col-md-2">
+                    <label for="duracion">Duración</label>
+                    <input class="form-control" type="text" name="duracion" id="duracion">
+                </div>
+                <div class="col-6 col-md-2">
+                    <label for="clasificacion">Clasificación</label>
+                    <input class="form-control" type="text" name="clasificacion" id="clasificacion">
+                </div>
+                <div class="col-6 col-md-2">
+                    <label for="valoracion">Valoración</label>
+                    <input class="form-control" type="text" name="valoracion" id="valoracion">
+                </div>
+                <div class="col-12 col-md-8">
+                    <label for="imagen">Imagen</label>
+                    <input class="form-control" type="file" name="imagen" id="imagen">
+                </div>
+                <div class="col-12">
+                    <input class="align-self-center btn btn-success" type="submit" value="Agregar Película">
+                </div>
+                <div class="col-12">
+                    <a class="linkNav" href="../pages/usuario_logueado.html">Volver a favoritas</a>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+   <script src="../js/postPelicula.js"></script>
+</body>
+</html>
